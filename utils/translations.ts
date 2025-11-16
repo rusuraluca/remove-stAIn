@@ -31,10 +31,13 @@ export const translations: { [key: string]: any } = {
     },
     analyzeButton: 'Analyze Stain',
     analyzing: 'Analyzing...',
+    goBackButton: 'Analyze Another Stain',
     error: {
       title: 'There was a problem',
       noImage: 'Please upload an image of the stain.',
       noMaterial: 'Please specify at least one fabric material and its percentage.',
+      percentageSum: 'The fabric composition percentages must add up to 100%.',
+      analysisFailed: 'Failed to get analysis. The AI model might be temporarily unavailable or the request failed. Please try again.',
     },
     resultDisplay: {
       summary: 'Summary',
@@ -68,10 +71,13 @@ export const translations: { [key: string]: any } = {
     },
     analyzeButton: 'Analizează Pata',
     analyzing: 'Se analizează...',
+    goBackButton: 'Analizează Altă Pată',
     error: {
       title: 'A apărut o problemă',
       noImage: 'Te rugăm să încarci o imagine a petei.',
       noMaterial: 'Te rugăm să specifici cel puțin un material textil și procentajul acestuia.',
+      percentageSum: 'Procentajele compoziției țesăturii trebuie să însumeze 100%.',
+      analysisFailed: 'Nu s-a putut obține analiza. Modelul AI ar putea fi temporar indisponibil sau cererea a eșuat. Vă rugăm să încercați din nou.',
     },
     resultDisplay: {
         summary: 'Rezumat',
@@ -105,10 +111,13 @@ export const translations: { [key: string]: any } = {
     },
     analyzeButton: 'Fleck analysieren',
     analyzing: 'Analysiere...',
+    goBackButton: 'Weiteren Fleck analysieren',
     error: {
       title: 'Es gab ein Problem',
       noImage: 'Bitte laden Sie ein Bild des Flecks hoch.',
       noMaterial: 'Bitte geben Sie mindestens ein Stoffmaterial und dessen Prozentsatz an.',
+      percentageSum: 'Die prozentualen Anteile der Stoffzusammensetzung müssen sich auf 100 % summieren.',
+      analysisFailed: 'Analyse konnte nicht abgerufen werden. Das KI-Modell ist möglicherweise vorübergehend nicht verfügbar oder die Anfrage ist fehlgeschlagen. Bitte versuchen Sie es erneut.',
     },
     resultDisplay: {
         summary: 'Zusammenfassung',
@@ -142,10 +151,13 @@ export const translations: { [key: string]: any } = {
     },
     analyzeButton: 'Analyser la Tache',
     analyzing: 'Analyse en cours...',
+    goBackButton: 'Analyser une Autre Tache',
     error: {
       title: 'Il y a eu un problème',
       noImage: 'Veuillez télécharger une image de la tache.',
       noMaterial: 'Veuillez spécifier au moins un matériau de tissu et son pourcentage.',
+      percentageSum: 'Les pourcentages de la composition du tissu doivent totaliser 100 %.',
+      analysisFailed: 'Impossible d\'obtenir l\'analyse. Le modèle d\'IA est peut-être temporairement indisponible ou la requête a échoué. Veuillez réessayer.',
     },
     resultDisplay: {
         summary: 'Résumé',
@@ -179,10 +191,13 @@ export const translations: { [key: string]: any } = {
     },
     analyzeButton: 'Analizar Mancha',
     analyzing: 'Analizando...',
+    goBackButton: 'Analizar Otra Mancha',
     error: {
       title: 'Hubo un problema',
       noImage: 'Por favor, sube una imagen de la mancha.',
       noMaterial: 'Por favor, especifique al menos un material de tejido y su porcentaje.',
+      percentageSum: 'Los porcentajes de la composición del tejido deben sumar 100%.',
+      analysisFailed: 'No se pudo obtener el análisis. Es posible que el modelo de IA no esté disponible temporalmente o que la solicitud haya fallado. Por favor, inténtelo de nuevo.',
     },
     resultDisplay: {
         summary: 'Resumen',

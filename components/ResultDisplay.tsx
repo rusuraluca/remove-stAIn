@@ -18,7 +18,6 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ result, t }) => {
 
   return (
     <div className="w-full mt-10 space-y-8">
-      {/* 1. Summary Section */}
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 border border-gray-200 dark:border-gray-700">
         <div className="flex items-start space-x-4">
           <div className="flex-shrink-0 text-indigo-500">
@@ -33,7 +32,6 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ result, t }) => {
         </div>
       </div>
 
-      {/* 2. Materials Needed Section */}
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 border border-gray-200 dark:border-gray-700">
         <div className="flex items-start space-x-4">
           <div className="flex-shrink-0 text-green-500">
@@ -53,16 +51,14 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ result, t }) => {
         </div>
       </div>
 
-      {/* 3. Steps Section */}
-       <div className="space-y-6">
-         <div className="text-center">
+      <div className="space-y-6">
+        <div className="text-center">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">{t.stepsTitle}</h3>
             <p className="text-gray-500 dark:text-gray-400">{t.stepsSubtitle}</p>
         </div>
         <div className="relative pl-8">
-          {/* Vertical line */}
           <div className="absolute left-12 top-4 bottom-4 w-0.5 bg-gray-200 dark:bg-gray-700" aria-hidden="true"></div>
-          
+
           {result.steps.map((step, index) => (
             <div key={index} className="relative mb-8">
               <div className="flex items-center">
@@ -79,7 +75,6 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ result, t }) => {
         </div>
       </div>
 
-      {/* 4. Additional Tip Section */}
       <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-6 border border-indigo-200 dark:border-indigo-700">
         <div className="flex items-start space-x-4">
           <div className="flex-shrink-0 text-yellow-500">

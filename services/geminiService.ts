@@ -17,6 +17,8 @@ function buildPrompt(materials: Material[], context: string, language: string): 
 
   return `You are an expert in fabric care and stain removal. Your task is to analyze an image of a clothing stain, its fabric composition, and any user-provided context to give the best removal instructions.
 
+Analyze the image to determine the approximate size of the stain (e.g., small, medium, large) and factor this into your recommendations. For example, a larger stain might require pre-soaking.
+
 Provide clear, safe, step-by-step instructions. Recommend specific cleaning agents and techniques suitable for the fabric to avoid damage.
 
 Here is the information:
@@ -36,7 +38,7 @@ const responseSchema = {
     properties: {
         summary: {
             type: Type.STRING,
-            description: "A brief summary of the stain situation and a high-level overview of the approach. For example: 'Given that you have a fresh oil stain on a 100% cotton garment, here are the steps for removal...'"
+            description: "A brief summary of the stain situation, including its perceived size from the image, and a high-level overview of the approach. For example: 'Given that you have a medium-sized fresh oil stain on a 100% cotton garment, here are the steps for removal...'"
         },
         materialsNeeded: {
             type: Type.ARRAY,
@@ -85,23 +87,17 @@ export const analyzeStain = async (
 
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: { parts: [textPart, imagePart] },
+      contents: { parts: [imagePart, textPart] },
       config: {
         responseMimeType: "application/json",
         responseSchema: responseSchema,
       }
     });
-    
+
     const jsonString = response.text;
     return JSON.parse(jsonString) as AnalysisResult;
   } catch (error) {
     console.error("Error analyzing stain:", error);
-    if (error instanceof SyntaxError) {
-        throw new Error("Failed to parse the analysis result. The AI model may have returned an invalid format.");
-    }
-    if (error instanceof Error) {
-        throw new Error(`An error occurred while analyzing the stain: ${error.message}`);
-    }
-    throw new Error("An unknown error occurred while analyzing the stain.");
+    throw error;
   }
 };
